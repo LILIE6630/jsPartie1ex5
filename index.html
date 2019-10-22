@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice_5</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <form>
+    <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/>
+    <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/>
+    <button  id="submit" name ="submit" onclick="multiplyNumber()">Valider</button>
+  </form>
+  <script type="text/javascript">
+  function multiplyNumber(){
+    const regexNumber = /^[0-9]+\.[0-9]+$/;
+    let firstNumber = document.getElementById('firstNumber').value.replace(',','.');
+    let secondNumber= document.getElementById('secondNumber').value.replace(',','.');
+    if(regexNumber.test(firstNumber) && regexNumber.test(secondNumber)){
+      let result = Math.trunc(firstNumber) * secondNumber;
+      alert(result);
+    }
+    else{
+      alert('opération non valide');
+    }
+  }
+  </script>
+</body>
+</html>
